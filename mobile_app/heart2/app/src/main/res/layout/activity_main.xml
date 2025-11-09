@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="12dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Heart Disease Risk"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_gravity="center_horizontal"
+                android:paddingBottom="12dp" />
+
+            <!-- age -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Age (29-77)"/>
+            <EditText
+                android:id="@+id/input_age"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:inputType="number"
+                android:minHeight="48dp"
+                android:hint="e.g. 55" />
+
+            <!-- trestbps -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Resting BP trestbps (94-200)"/>
+            <EditText
+                android:id="@+id/input_trestbps"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:minHeight="48dp"
+                android:hint="e.g. 120" />
+
+            <!-- chol -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Cholesterol (126-564)"/>
+            <EditText
+                android:id="@+id/input_chol"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:minHeight="48dp"
+                android:hint="e.g. 220" />
+
+            <!-- thalach -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Max heart rate (thalach) (71-202)"/>
+            <EditText
+                android:id="@+id/input_thalach"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:minHeight="48dp"
+                android:hint="e.g. 150" />
+
+            <!-- oldpeak -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Oldpeak (0.0-6.2)"/>
+            <EditText
+                android:id="@+id/input_oldpeak"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:minHeight="48dp"
+                android:hint="e.g. 1.2" />
+
+            <!-- sex -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Sex"/>
+            <RadioGroup
+                android:id="@+id/radio_sex"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <RadioButton android:id="@+id/sex_female" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Female" />
+                <RadioButton android:id="@+id/sex_male" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Male" android:checked="true" />
+            </RadioGroup>
+
+            <!-- cp (chest pain) -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Chest pain type (cp)"/>
+            <Spinner android:id="@+id/spinner_cp" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="48dp" />
+
+            <!-- fbs -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Fasting blood sugar >120 (fbs)"/>
+            <Spinner android:id="@+id/spinner_fbs" android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="8dp"
+                android:spinnerMode="dropdown" android:minHeight="48dp" />
+
+            <!-- restecg -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Rest ECG (restecg)"/>
+            <Spinner android:id="@+id/spinner_restecg" android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="8dp"
+                android:spinnerMode="dropdown" android:minHeight="48dp" />
+
+            <!-- exang -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Exercise induced angina (exang)"/>
+            <Spinner android:id="@+id/spinner_exang" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="48dp" />
+
+            <!-- slope -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Slope of ST segment (slope)"/>
+            <Spinner android:id="@+id/spinner_slope" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="48dp" />
+
+            <!-- ca -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Number of vessels (ca)"/>
+            <Spinner android:id="@+id/spinner_ca" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="48dp" />
+
+            <!-- thal -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Thalassemia (thal)"/>
+            <Spinner android:id="@+id/spinner_thal" android:layout_width="match_parent" android:layout_height="wrap_content" />
+
+            <!-- Predict button -->
+            <Button
+                android:id="@+id/btn_predict"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Predict"
+                android:layout_marginTop="12dp" />
+
+            <!-- Result output -->
+            <TextView
+                android:id="@+id/text_result"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:paddingTop="12dp" />
+
+            <TextView
+                android:id="@+id/text_prob"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/text_error"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#D32F2F"
+                android:paddingTop="8dp" />
+
+            <TextView
+                android:id="@+id/text_disclaimer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Disclaimer: educational only. This is not medical advice."
+                android:textSize="12sp"
+                android:paddingTop="12dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
